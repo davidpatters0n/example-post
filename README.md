@@ -18,6 +18,6 @@ author_params = {
   bio: 'Foo',
   posts_attributes: [{title: 'Cool', body: 'Beans'}]
 }
-Author.create(author_params)
+Author.create!(author_params)
 ```
 You'll find that upon running: `Author.create(author_params)` it won't persist the record. The expectation should be that the Author & Post records are persisted (per rails-bug-report.rb expectation). Making things more interesting you'll find that if you run `rails test` the test fail. Whereas if you run: `ruby lib/rails-bug-report.rb` which contains the _exact_ same tests the pass.
